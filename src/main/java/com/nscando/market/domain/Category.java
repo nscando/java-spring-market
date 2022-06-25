@@ -1,13 +1,9 @@
 package com.nscando.market.domain;
 
 public class Category {
-
-
-
-    private  int categoryId;
+    private int categoryId;
     private String category;
     private boolean active;
-
 
     public int getCategoryId() {
         return categoryId;
@@ -25,11 +21,11 @@ public class Category {
         this.category = category;
     }
 
-    public Boolean getActive() {
+    public boolean isActive() {
         return active;
     }
 
-    public void setActive(Boolean active) {
+    public void setActive(boolean active) {
         this.active = active;
     }
 }

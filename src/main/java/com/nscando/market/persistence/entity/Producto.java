@@ -3,13 +3,11 @@ package com.nscando.market.persistence.entity;
 import javax.persistence.*;
 
 @Entity
-@Table(name= "productos")
+@Table(name = "productos")
 public class Producto {
 
     @Id
-    //auto generacion del id en la BD
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    //se usa para cuando tenes un nombre diferente a la de la BD en la clase
     @Column(name = "id_producto")
     private Integer idProducto;
 
@@ -21,16 +19,15 @@ public class Producto {
     @Column(name = "codigo_barras")
     private String codigoBarras;
 
-    @Column(name="precio_venta")
+    @Column(name = "precio_venta")
     private Double precioVenta;
 
-    @Column(name = "cantidad_sotck")
+    @Column(name = "cantidad_stock")
     private Integer cantidadStock;
 
     private Boolean estado;
 
     @ManyToOne
-    //esto significa que a traves de esta relacion no vamos a borrar ni vamos a actualizar una nueva categoria
     @JoinColumn(name = "id_categoria", insertable = false, updatable = false)
     private Categoria categoria;
 
@@ -88,5 +85,13 @@ public class Producto {
 
     public void setEstado(Boolean estado) {
         this.estado = estado;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

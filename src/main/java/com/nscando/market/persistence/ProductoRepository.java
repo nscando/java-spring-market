@@ -15,7 +15,7 @@ import java.util.Optional;
 public class ProductoRepository implements ProductRepository {
     @Autowired
     private ProductoCrudRepository productoCrudRepository;
-    
+
     @Autowired
     private ProductMapper mapper;
 
@@ -40,9 +40,7 @@ public class ProductoRepository implements ProductRepository {
     @Override
     public Optional<Product> getProduct(int productId) {
         return productoCrudRepository.findById(productId).map(producto -> mapper.toProduct(producto));
-
     }
-
 
     @Override
     public Product save(Product product) {
