@@ -56,6 +56,7 @@ public class ComprasProducto {
     }
 
     public void setCompra(Compra compra) {
+        this.compra = compra;
     }
 
     public Compra getCompra() {
